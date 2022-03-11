@@ -6,7 +6,7 @@ from aws_cdk import (
 import aws_cdk as cdk
 from cdk_test.cdk_test_stack import CdkTestStack
 
-env_ME = cdk.Environment(account="693862042861", region="me-south-1")
+env_ME = cdk.Environment(account="12-digit-AccountNo", region="me-south-1")
 app = App()
 CdkTestStack(app, "cdk-test", env=env_ME)
 
