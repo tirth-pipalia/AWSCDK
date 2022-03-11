@@ -3,13 +3,11 @@
 from aws_cdk import (
     App
 )
-import os
+import aws_cdk as cdk
 from cdk_test.cdk_test_stack import CdkTestStack
 
+env_ME = cdk.Environment(account="693862042861", region="me-south-1")
 app = App()
-CdkTestStack(app, "cdk-test", env={
-    'account': os.environ['CDK_DEFAULT_ACCOUNT'],
-    'region': os.environ['CDK_DEFAULT_REGION']
-  })
+CdkTestStack(app, "cdk-test", env=env_ME)
 
 app.synth()
